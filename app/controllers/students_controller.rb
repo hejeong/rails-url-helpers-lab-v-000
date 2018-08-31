@@ -13,9 +13,10 @@ class StudentsController < ApplicationController
     @student = Student.find_by_id(params[:id])
     if @student.active
       @student.active = false
-    else 
+    else
       @student.active = true
     end
+    @student.save
   end
 
   private
